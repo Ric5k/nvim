@@ -24,6 +24,7 @@ return {
           "query",
           "vim",
           "vimdoc",
+	  "svelte",
         },
         auto_install = true, -- true にしておくと自動で足りないものを入れてくれるので楽です
       })

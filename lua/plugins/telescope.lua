@@ -1,7 +1,7 @@
 -- plugins/telescope.lua:
 return {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8', -- v0.2.0よりも安定版の0.1.8や最新の0.1.xが一般的です
+    tag = 'v0.2.0', -- v0.2.0よりも安定版の0.1.8や最新の0.1.xが一般的です
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
         -- 1. Telescopeの初期化
