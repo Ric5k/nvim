@@ -1,14 +1,23 @@
 # neovim setting
-- pkg
-lazy.nvim 
+## pkg
+- lazy.nvim 
+- mason.nvim
 ---
-- plugin
+## plugin
 
-/014 󰢱  color.lua
-/016 󰢱  indent-blankline.lua
-/017 󰢱  lazygit.lua
-/013 󰢱  lsp.lua
-/012 󰢱  lualine.lua
-/010 󰢱  oil.lua
-/011 󰢱  telescope.lua
-/015 󰢱  treesitter.lua
+- color.lua
+- indent-blankline.lua
+- lazygit.lua
+- lsp.lua
+- lualine.lualine
+- oil.lua
+- telescope.lua
+- treesitter.lua
+---
+## keymap
+
+- <leader> = space
+- <leader> lg = lazygit
+- <leader> ff = fileserch
+- <leader>fg', builtin.live_grep, { desc = "全文検索" })
+- normal f = hover
