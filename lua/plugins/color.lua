@@ -1,31 +1,40 @@
 -- lua/plugins/colorscheme.lua
 return {
   {
-    "navarasu/onedark.nvim",
-    lazy = false,    -- 起動時に読み込む
-    priority = 1000, -- 他のプラグインより先に読み込む
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      require('onedark').setup({
-        -- スタイルを選択: 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer'
-        -- 'warmer' や 'deep' にすると、色がはっきりして「色がない」感じが解消されやすいです
-        style = 'warmer', 
+      require('kanagawa').setup({
+        compile = false,
+        undercurl = true,
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = false },
+        statementStyle = { bold = true },
+        typeStyle = {},
+        transparent = false,
+        dimInactive = false,
+        terminalColors = true,
+        theme = "dragon",
         
-        -- Treesitterのハイライトを明示的に有効にする
-        code_style = {
-          comments = 'italic',
-          keywords = 'none',
-          functions = 'none',
-          strings = 'none',
-          variables = 'none'
-        },
-        
-        -- 補完ウィンドウなどの見た目を綺麗にする
-        diagnostics = {
-          darker = true, -- 診断情報の背景を少し暗くして見やすくする
-          undercurl = true, -- エラーの下線を波線にする
+        -- ここに書くのが正解です
+        overrides = function(colors)
+          return {
+            -- サイドの背景色を消す
+            SignColumn = { bg = "none" },
+            -- ついでに行番号の背景も消して統一感を出す場合
+            LineNr = { bg = "none" },
+          }
+        end,
+
+        background = {
+          dark = "dragon",
+          light = "dragon"
         },
       })
-      require('onedark').load()
+
+      vim.cmd("colorscheme kanagawa")
     end,
   },
 }
